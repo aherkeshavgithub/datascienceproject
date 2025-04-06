@@ -6,7 +6,7 @@
 
 1. Data Ingestion
 2. Data Validation
-3. Data Transformation
+3. Data Transformation-- Feature engg, data preprocessing.
 4. Model Trainer
 5. Model Evaluation
 
