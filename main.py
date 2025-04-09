@@ -3,6 +3,7 @@ from src.datascience.pipeline.data_ingestion_pipeline import DataIngestionTraini
 from src.datascience.pipeline.data_validation_pipeline import DataValidationTrainingPipeline                                                      
 from src.datascience.pipeline.data_transformation_pipeline import DataTransformationTrainingPipeline 
 from src.datascience.pipeline.model_trainer_pipeline import ModelTrainerTrainingPipeline
+from src.datascience.pipeline.model_evalaution_pipeline import ModelEvalautionTrainingPipeline
 
 logger.info("Welcome to our cutome logging data science project")
 
@@ -46,6 +47,17 @@ try:
     logger.info(f">>>>>>>>>> Stage {STAGE_NAME} stated>>>>>>>>>>>")
     data_ingestion=ModelTrainerTrainingPipeline()
     data_ingestion.initiate_model_training()
+    logger.info(f">>>>>>>> Stage {STAGE_NAME} completed >>>>><<<<<<<\n\nx===========x")
+except Exception as e:
+    logger.exception(e)
+    raise e
+
+STAGE_NAME = "Model Evaluation Stage"
+
+try:
+    logger.info(f">>>>>>>>>> Stage {STAGE_NAME} stated>>>>>>>>>>>")
+    data_ingestion=ModelEvalautionTrainingPipeline()
+    data_ingestion.initiate_model_evaluation_training_pipeline()
     logger.info(f">>>>>>>> Stage {STAGE_NAME} completed >>>>><<<<<<<\n\nx===========x")
 except Exception as e:
     logger.exception(e)
